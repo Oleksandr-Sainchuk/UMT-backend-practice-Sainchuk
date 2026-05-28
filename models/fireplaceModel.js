@@ -1,6 +1,6 @@
 import { PRODUCT_CATEGORIES } from "../constants/categories.js";
-import { loadDb } from "../helpers/jsonDb.js";
 import { buildPaginatedResponse } from "../helpers/pagination.js";
+import { loadDb } from "../helpers/jsonDb.js";
 
 export function findPaginated({ page, perPage, category }) {
   const db = loadDb();
