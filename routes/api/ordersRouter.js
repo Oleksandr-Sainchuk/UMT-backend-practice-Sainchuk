@@ -1,6 +1,6 @@
 import { validateBody } from "../../helpers/validateBody.js";
 import { createOrderSchema } from "../../schemas/orderSchema.js";
-import { orders as c } from "../../controllers/index.js";
+import { order as c } from "../../controllers/index.js";
 import { createRouter } from "../../helpers/createRouter.js";
 
 const ordersRouterOptions = [
