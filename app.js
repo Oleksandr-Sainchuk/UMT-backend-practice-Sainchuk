@@ -6,7 +6,7 @@ import swaggerUi from "swagger-ui-express";
 import config from "./envConfigs.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import { notFoundHandler } from "./middlewares/notFound.js";
-import { feedbackRouter, fireplaceRouter, ordersRouter } from "./routes/api/index.js";
+import { feedbackRouter, fireplaceRouter, orderRouter } from "./routes/api/index.js";
 import swaggerDocument from "./swagger.json" with { type: "json" };
 
 const app = express();
@@ -33,9 +33,9 @@ app.use(express.static("public"));
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-app.use("/api/feedbacks", feedbackRouter);
+app.use("/api/feedback", feedbackRouter);
 app.use("/api/fireplace", fireplaceRouter);
-app.use("/api/orders", ordersRouter);
+app.use("/api/order", orderRouter);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
