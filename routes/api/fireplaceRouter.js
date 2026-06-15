@@ -9,6 +9,7 @@ import { createRouter } from "../../helpers/createRouter.js";
 import { validateQuery } from "../../helpers/validateQuery.js";
 import { validateParams } from "../../helpers/validateParams.js";
 import { validateBody } from "../../helpers/validateBody.js";
+import { upload } from "../../middlewares/multerUpload.js";
 
 const fireplaceRouterOptions = [
   {
@@ -26,13 +27,13 @@ const fireplaceRouterOptions = [
   {
     method: "post",
     route: "/",
-    middlewares: [validateBody(createFireplaceSchema)],
+    middlewares: [upload.single("picture"), validateBody(createFireplaceSchema)],
     controller: c.createFireplace,
   },
   {
     method: "patch",
     route: "/:id",
-    middlewares: [validateParams(idParamSchema), validateBody(updateFireplaceSchema)],
+    middlewares: [upload.single("picture"), validateParams(idParamSchema), validateBody(updateFireplaceSchema)],
     controller: c.updateFireplace,
   },
   {
