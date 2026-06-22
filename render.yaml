@@ -1,6 +1,6 @@
 databases:
   - name: umt-fireplace-backend-db
-    databaseName: umt-fireplace-backend
+    databaseName: umt_fireplace_backend
     plan: free
 
 services:
