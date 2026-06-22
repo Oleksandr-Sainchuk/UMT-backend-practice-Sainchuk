@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
+    "build": "prisma generate",
     "dev": "nodemon --watch .env server.js",
     "postinstall": "prisma generate",
     "db:up": "docker compose up -d",
@@ -18,7 +19,7 @@
     "type": "git",
     "url": "git@github.com-Oleksandr-Sainchuk:Oleksandr-Sainchuk/UMT-backend-practice-Sainchuk.git"
   },
-  "keywords": [],
+  "keywords": [ ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -32,10 +33,11 @@
     "morgan": "^1.10.1",
     "multer": "^2.1.1",
     "pg": "^8.21.0",
-    "swagger-ui-express": "^5.0.1"
+    "swagger-ui-express": "^5.0.1",
+    "prisma": "^7.8.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14",
-    "prisma": "^7.8.0"
-  }
+    "nodemon": "^3.1.14"
+  },
+  "engines": { "node": ">=20" }
 }
